@@ -1,0 +1,290 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
+.grid{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	width: 90%;
+	max-width: 1100px;
+	height: 100%;
+	margin: auto;
+	gap: 10px;
+	overflow: hidden;
+	align-items: center;
+}
+
+.weight-400{
+	font-weight: 400;
+}
+
+.weight-600{
+	font-weight: 600;
+}
+
+.parrafo{
+	margin-bottom: 20px;
+}
+
+.header{
+	height: 500px;
+}
+
+.img-hero{
+	width: 100%;
+	height: auto;
+	grid-column: 7/25;
+}
+
+.img{
+	width: 95%;
+	max-width: 700px;
+}
+.text-hero{
+	grid-column: 1/7;
+	padding-right: 20px;
+}
+
+.text-hero p{
+	text-align: justify;
+}
+
+.cta{
+	width: 130px;
+	background: #000;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	padding: 10px 0;
+	text-decoration: none; 
+}
+
+/* --- --- --- --- --- --- --- Servicios --- --- --- --- --- --- --- */
+
+.servicios{
+	height: 370px;
+	background: linear-gradient(180deg, #fff 50%, #000 50%);
+}
+
+[class^="far fa"]{
+	font-size: 40px;
+	text-align: center;
+}
+
+/* --- --- --- --- --- --- --- Sobre Nosotros --- --- --- --- --- --- --- */
+.about-us{
+	background: #000;
+	color: #fff;
+	height: auto;
+	padding-bottom: 60px;
+}
+
+.textos-about-us{
+	grid-column: 1/-1;
+	text-align: center;
+}
+
+.textos-about-us .parrafo{
+	margin-top: 10px;
+	color: #ccc;
+}
+
+/* --- --- --- --- --- --- --- Misión y Visión --- --- --- --- --- --- --- */
+.mission{
+	padding: 80px 0;
+}
+
+.textos-mission{
+	grid-column: 7/14;
+	grid-row: 1/-1;
+	margin-bottom: 20px;
+}
+
+.img-mission{
+	grid-column: 1/7;
+	grid-row: 1/-1;
+}
+
+
+footer{
+	background: #000;
+	color: #fff;
+	text-align: center;
+	padding: 60px 0;
+}
+
+.textos-footer{
+	grid-column: 1/-1;
+	margin-bottom: 30px;
+}
+
+[class^="footer-item"] a{
+	color: #fff;
+	font-size: 30px;
+}
+[class^="footer-item"]{
+	grid-column: span 3;
+}
+
+/* --- --- --- --- --- --- --- Contenedor Titulo y Controles --- --- --- --- --- --- --- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.contenedor-titulo-controles h3 {
+	color: #000;
+	font-size: 30px;
+}
+.contenedor-titulo-controles .indicadores button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px; 
+}
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: red;
+}
+.imagenes-recomendadas .indicadores button:hover,
+.imagenes-recomendadas .indicadores button.activo {
+	background: #000;
+}
+
+/* --- --- --- --- --- --- --- Contenedor Principal y Flechas --- --- --- --- --- --- --- */
+.imagenes-recomendadas {
+	margin-bottom: 70px;
+}
+
+.imagenes-recomendadas .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.imagenes-recomendadas .contenedor-principal .flecha-izquierda,
+.imagenes-recomendadas .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50px;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.imagenes-recomendadas .contenedor-principal .flecha-izquierda:hover, 
+.imagenes-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.imagenes-recomendadas .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+.imagenes-recomendadas .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+/* --- --- --- --- --- --- --- Carousel --- --- --- --- --- --- --- */
+.imagenes-recomendadas .contenedor-carousel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+.imagenes-recomendadas .contenedor-carousel .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+	
+}
+
+.imagenes-recomendadas .contenedor-carousel .carousel .imagen {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.imagenes-recomendadas .contenedor-carousel .carousel .imagen.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+} 
+
+.imagenes-recomendadas .contenedor-carousel .carousel .imagen img {
+	width: 100%;
+	vertical-align: top;
+}
+
+/* --- --- --- --- --- --- --- Media Queries --- --- --- --- --- --- --- */
+@media screen and (max-width:800px){
+	.header{
+		height: auto;
+	}
+	.grid{
+		grid-gap: 30px;
+	}
+	.img-hero, .text-hero{
+		grid-column: 1/-1;
+	}
+	.img-hero{
+		text-align: center;
+	}
+	.text-hero{
+		margin-top: 40px;
+	}
+	.servicios{
+		height: auto;
+		margin-top: 40px;
+	}
+	.img-mission{
+		grid-column: 1/-1;
+		grid-row: 2/3;
+		text-align: center;	
+	}
+	.textos-mission{
+		grid-column: 1/-1;
+		grid-row: 1/2;
+
+	}
+}
+
+@media screen and (max-width: 400px){
+	.img{
+		max-width: 170px;
+	}
+	.grid{
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	}
+	.textos-mission h3{
+		margin: 15px;
+	}
+	[class^="footer-item"]{
+		column-gap: 1/-1
+	}
+	.imagenes-recomendadas .contenedor-carousel {
+		overflow: visible;
+	}
+	.imagenes-recomendadas .contenedor-carousel .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+	.imagenes-recomendadas .indicadores,
+	.imagenes-recomendadas .flecha-izquierda, 
+	.imagenes-recomendadas .flecha-derecha {
+		display: none;
+	}
+}
